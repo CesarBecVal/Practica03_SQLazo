@@ -28,25 +28,25 @@ Puedes compilar y ejecutar el programa directamente desde la terminal usando los
 El siguiente comando compilará todos los archivos `.java` que se encuentran en el directorio `src/` y dejará los archivos `.class` compilados en un nuevo directorio llamado `out/`.
 
 ```bash
-javac -d out --source-path src src/com/unam/ciencias/myp/Main.java
+javac -d out --source-path src src/mx/unam/ciencias/myp/Main.java
 ```
 
 * **`javac`**: Es el compilador de Java.
 * **`-d out`**: Le indica al compilador que coloque los archivos compilados (`.class`) en una carpeta llamada `out`.
 * **`--source-path src`**: Especifica que el código fuente (`.java`) se encuentra en la carpeta `src`, para que pueda encontrar todas las clases necesarias.
-* **`src/com/unam/ciencias/myp/Main.java`**: Es el archivo que sirve como punto de entrada para la compilación.
+* **`src/mx/unam/ciencias/myp/Main.java`**: Es el archivo que sirve como punto de entrada para la compilación.
 
 ### 2. Ejecución
 
 Una vez compilado, puedes ejecutar el programa con el siguiente comando:
 
 ```bash
-java -cp out com.unam.ciencias.myp.Main
+java -cp out mx.unam.ciencias.myp.Main
 ```
 
 * **`java`**: Es la Máquina Virtual de Java (JVM) que ejecuta el código.
 * **`-cp out`** (`-cp` es una abreviatura de `--class-path`): Le indica a la JVM que busque los archivos `.class` en el directorio `out`.
-* **`com.unam.ciencias.main.Main`**: Es el nombre completamente calificado de la clase que contiene el método `main` que queremos ejecutar.
+* **`mx.unam.ciencias.myp.Main`**: Es el nombre completamente calificado de la clase que contiene el método `main` que queremos ejecutar.
 
 ## 📝 Anotaciones sobre la Implementación de Patrones
 
