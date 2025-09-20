@@ -1,4 +1,4 @@
-
+package mx.unam.ciencias.myp.patterns.builder;
 
 public class PaqueteHerramientasBuilder implements PaqueteBuilder {
   private int kunais;
@@ -22,9 +22,9 @@ public class PaqueteHerramientasBuilder implements PaqueteBuilder {
   }
 
   @Override 
-  public void PaqueteHerramientasBuilder agregarKunais(int cantidad) {
+  public PaqueteHerramientasBuilder agregarKunais(int cantidad) {
     validarNoNegativo(cantidad, "Kunais");
-    this.kuanis = cantidad;
+    this.kunais = cantidad;
     return this;
   }
 
@@ -45,7 +45,7 @@ public class PaqueteHerramientasBuilder implements PaqueteBuilder {
   @Override 
   public PaqueteHerramientasBuilder agregarBombasHumo(int cantidad) {
     validarNoNegativo(cantidad, "Bombas de Humo");
-    this.bombasHuma = cantidad;
+    this.bombasHumo = cantidad;
     return this;
   }
 
@@ -53,6 +53,13 @@ public class PaqueteHerramientasBuilder implements PaqueteBuilder {
   public PaqueteHerramientasBuilder agregarBotiquines(int cantidad) {
     validarNoNegativo(cantidad, "Botiquines");
     this.botiquines = cantidad;
-    retun this;
+    return this;
+  }
+
+  @Override
+  public PaqueteHerramientas build() {
+    PaqueteHerramientas paquete = new PaqueteHerramientas(kunais, shurikens, papelesBomba, bombasHumo, botiquines);
+    reset();
+    return paquete;
   }
 }
