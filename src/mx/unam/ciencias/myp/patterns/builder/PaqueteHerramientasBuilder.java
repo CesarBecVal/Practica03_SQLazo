@@ -78,6 +78,13 @@ public class PaqueteHerramientasBuilder implements PaqueteBuilder {
     return this;
   }
 
+  /**
+   * Agrega la cantidad de shurikens al builder (se acumula).
+   *
+   * @param cantidad número de shurikens a agregar; debe ser >= 0.
+   * @return el mismo builder para permitir encadenamiento.
+   * @throws IllegalArgumentException si {@code cantidad} es negativa.
+   */
   @Override 
   public PaqueteHerramientasBuilder agregarShurikens(int cantidad) {
     validarNoNegativo(cantidad, "Shurikens");
@@ -85,6 +92,13 @@ public class PaqueteHerramientasBuilder implements PaqueteBuilder {
     return this; 
   }
 
+  /**
+   * Agrega la cantidad de papeles bomba al builder (se acumula).
+   *
+   * @param cantidad número de papeles bomba a agregar; debe ser >= 0.
+   * @return el mismo builder para permitir encadenamiento.
+   * @throws IllegalArgumentException si {@code cantidad} es negativa.
+   */
   @Override 
   public PaqueteHerramientasBuilder agregarPapelesBomba(int cantidad) {
     validarNoNegativo(cantidad, "Papeles Bomba");
@@ -92,6 +106,13 @@ public class PaqueteHerramientasBuilder implements PaqueteBuilder {
     return this;
   }
 
+  /**
+   * Agrega la cantidad de bombas de humo al builder (se acumula).
+   *
+   * @param cantidad número de bombas de humo a agregar; debe ser >= 0.
+   * @return el mismo builder para permitir encadenamiento.
+   * @throws IllegalArgumentException si {@code cantidad} es negativa.
+   */
   @Override 
   public PaqueteHerramientasBuilder agregarBombasHumo(int cantidad) {
     validarNoNegativo(cantidad, "Bombas de Humo");
@@ -99,6 +120,13 @@ public class PaqueteHerramientasBuilder implements PaqueteBuilder {
     return this;
   }
 
+  /**
+   * Agrega la cantidad de botiquines al builder (se acumula).
+   *
+   * @param cantidad número de botiquines a agregar; debe ser >= 0.
+   * @return el mismo builder para permitir encadenamiento.
+   * @throws IllegalArgumentException si {@code cantidad} es negativa.
+   */
   @Override
   public PaqueteHerramientasBuilder agregarBotiquines(int cantidad) {
     validarNoNegativo(cantidad, "Botiquines");
@@ -106,6 +134,12 @@ public class PaqueteHerramientasBuilder implements PaqueteBuilder {
     return this;
   }
 
+  /**
+   * Construye la instancia de {@link PaqueteHerramientas} con las cantidades
+   * acumuladas y resetea el builder para permitir su reutilización.
+   *
+   * @return el {@code PaqueteHerramientas} construido.
+   */
   @Override
   public PaqueteHerramientas build() {
     PaqueteHerramientas paquete = new PaqueteHerramientas(kunais, shurikens, papelesBomba, bombasHumo, botiquines);
