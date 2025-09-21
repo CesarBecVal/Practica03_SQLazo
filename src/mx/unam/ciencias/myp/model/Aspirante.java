@@ -1,5 +1,7 @@
 package mx.unam.ciencias.myp.model;
 
+import java.util.Objects;
+
 /**
  * Clase que representa a un aspirante de la Academia Ninja.
  * <p>
@@ -61,6 +63,32 @@ public class Aspirante {
     @Override
     public String toString() {
         return nombre + " (Clan " + clan + ", Habilidad: " + nivelHabilidad + ")";
+    }
+
+    /*
+     * Dos aspirantes son iguales si tienen el mismo nombre, edad, clan y nivel de habilidad.
+     * 
+     * @param obj el objeto a comparar con este aspirante.
+     * @return true si los aspirantes son iguales; false en otro caso.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Aspirante aspirante = (Aspirante) obj;
+        return edad == aspirante.edad &&
+            nivelHabilidad == aspirante.nivelHabilidad &&
+            Objects.equals(nombre, aspirante.nombre) &&
+            Objects.equals(clan, aspirante.clan);
+    }
+
+    /*
+     * Genera un código hash basado en el nombre, edad, clan y nivel de habilidad del aspirante.
+     * @param return el código hash del aspirante.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, edad, clan, nivelHabilidad);
     }
 
 }

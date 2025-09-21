@@ -49,7 +49,23 @@ public class Grupo {
      * Muestra un resumen del grupo, incluyendo el nombre y descripción del campo de entrenamiento asignado.
      */
     public void mostrarResumen() {
-        System.out.println("Campo: " + campo.getNombre());
+        System.out.println("Campo de entrenamiento: " + campo.getNombre());
         System.out.println("Descripción: " + campo.getDescripcion());
+    }
+
+    public Ninja getLider() {
+    return lider;
+    }
+
+    public List<Aspirante> getAspirantes() {
+        return aspirantes;
+    }
+
+    public PaqueteHerramientas getPaquete() {
+        return paquete;
+    }
+
+    public CampoEntrenamiento getCampo() {
+        return campo;
     }
 }
