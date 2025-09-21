@@ -65,7 +65,7 @@ public class PaqueteHerramientas {
      */
     @Override
     public String toString() {
-        return String.format("Paquete{kunais = %d, shurikens = %d, papelesBomba = %d, bombasHumo = %d, botiquines = %d, peso = %.2fkg}", kunais, shurikens, papelesBomba, bombasHumo, botiquines, getPesoTotal());
+        return String.format("\nkunais: %d \nshurikens: %d \npapelesBomba: %d \nbombasHumo: %d \nbotiquines: %d \npeso: %.2f kg \n", kunais, shurikens, papelesBomba, bombasHumo, botiquines, getPesoTotal());
 
     }
 }
